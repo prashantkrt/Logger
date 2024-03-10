@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+	<Appenders>
+
+		<Console name="LoggingToConsole" target="SYSTEM_OUT">
+			<PatternLayout>
+				<!-- %d:- date , %p:-priority , %M:-Method name, %c:-class name,%m:-message,%n:-line 
+					break -->
+				<!-- %d{yyyy-MM-dd HH:mm:ss,SSS} yyyy- year in 4 digits MM – Month in 
+					2 digits dd – date in 2 digits HH – Hour mm -minutes ss – seconds SSS – milli 
+					seconds -->
+				<Pattern>
+					%d - %c - [%M] - (%p) - %m - %n
+				</Pattern>
+			</PatternLayout>
+		</Console>
+
+		<File name="LoggingToFile" fileName="logs/mylogging.log">
+			<PatternLayout>
+				<Pattern>
+					%d - %c - [%M] - (%p) - %m - %n
+				</Pattern>
+			</PatternLayout>
+		</File>
+
+	</Appenders>
+
+	<Loggers>
+
+		<Root level="warn">
+			<AppenderRef ref="LoggingToConsole" />
+			<AppenderRef ref="LoggingToFile" />
+		</Root>
+
+	</Loggers>
+
+
+</Configuration>
